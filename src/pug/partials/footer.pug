@@ -1,0 +1,47 @@
+footer.footer
+  .footer__top
+    .container
+      .row
+        .col-lg-3
+          .footer__widget
+            h3.footer__title Liên hệ với chúng tôi
+            p.footer__address #[i.fa.fa-map-marker] Tầng 4, Tòa nhà Hanoi Group  Số 442 Đội Cấn, P. Cống Vị, Q. Ba Đình, Hà Nội
+            p.footer__phone
+              span #[i.fa.fa-phone] (04) 6674 2332 - 
+              span #[i.fa.fa-phone] (04) 3786 8904
+            p.footer__phone
+              span #[i.fa.fa-phone] (04) 6674 2332 - 
+              span.footer__mail #[i.fa.fa-envelope] test@gmail.com
+        .col-lg-2
+          .footer__widget
+            h3.footer__title Chuyển hàng
+            ul.footer__list
+              each item in dataChuyenHang
+                +itemFooter(item)
+        .col-lg-2
+          .footer__widget
+            h3.footer__title Hỗ trợ
+            ul.footer__list
+              each item in dataHoTro
+                +itemFooter(item)
+        .col-lg-2
+          .footer__widget
+            h3.footer__title Thông tin
+            ul.footer__list
+              each item in dataThongTin
+                +itemFooter(item)
+        .col-lg-2
+          .footer__widget
+            h3.footer__title My Account
+            ul.footer__list
+              each item in dataMyAccount
+                +itemFooter(item)
+  .footer__bottom
+    .container
+      .row
+        .col-lg-6
+          .footer__copyright
+            span © Copyright 2008-2014 DKT Technology JSC
+        .col-lg-6
+          .footer__payment
+            img(src="./assets/images/payment.png", alt="")

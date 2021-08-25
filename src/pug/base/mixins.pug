@@ -8,3 +8,8 @@ mixin itemCart(item)
         p= item.price
       .header__cart-trash
         i.fa.fa-trash-o
+
+//- Footer Item
+mixin itemFooter(item)
+  li
+    a(href= item.link)= item.title

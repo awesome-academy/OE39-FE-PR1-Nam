@@ -9,13 +9,14 @@
 html {
   font-size: 10px;
   box-sizing: border-box;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 body {
   font-size: 1.5rem;
   line-height: 1.75;
   font-weight: 400;
+  overflow: scroll;
   overflow-x: hidden;
 }
 

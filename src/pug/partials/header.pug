@@ -1,0 +1,60 @@
+header.header
+  .container
+    .header__wrapper
+      //- Logo
+      .header__logo
+        a
+          img(src="./assets/images/logo.png", alt="Logo Main")
+      //- Menu
+      nav.header__menu.navbar.navbar-expand-lg
+        button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#header-menu")
+          i.fa.fa-bars
+        .collapse.navbar-collapse(id="header-menu")
+          ul.navbar-nav
+            li.header__menu-close
+              button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#header-menu")
+                i.fa.fa-times
+            each navbarItem in navbarItems
+              - const { url, name, hasSubmenu, submenuItems } = navbarItem
+              if(!hasSubmenu)
+                li
+                  a(href=url)= name
+              else
+                li.dropdown.megamenu
+                  a.dropdown-toggle(href=url, data-bs-toggle="dropdown")= name
+                  .dropdown-menu.megamenu__box(role="menu")
+                    .row
+                      each submenuItem in submenuItems
+                        - const { name, listMenuItems } = submenuItem
+                        .col-lg-4
+                          .megamenu__box-item
+                            h6.megamenu__title= name
+                            ul.megamenu__list
+                              each listMenuItem in listMenuItems
+                                - const { name, url } = listMenuItem
+                                  li
+                                    a(href=url)= name
+      //- Cart
+      .header__cart
+        .dropdown
+          span.dropdown-toggle.header__cart-toggle(type="button", id="cart-button", data-bs-toggle="dropdown", aria-expanded="false")
+            i.fa.fa-shopping-cart
+          .dropdown-menu.dropdown-menu-end.header__cart-box(aria-labelledby="cart-button")
+            ul.header__cart-list
+              each item in dataCartItems
+                +itemCart(item)
+
+            hr
+            .header__cart-total
+              span.title Tổng số
+              span.price 240.000 #[sup đ]
+            a.header__cart-button(href="#") GIỎ HÀNG
+      //- Search
+      .header__search
+        span(data-bs-toggle="modal", data-bs-target="#searchModal")
+          i.fa.fa-search
+        //- Modal search
+        .modal.fade.modal-search(id="searchModal", tabindex="-1", aria-hidden="true")
+          .modal-dialog.modal-dialog-centered
+            .modal-content
+              input.modal-search__input(type="text", placeholder="Tìm kiếm...")

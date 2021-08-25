@@ -1,0 +1,15 @@
+//- Cart Item
+mixin itemCart(item)
+  li
+    .header__cart-item(href= item.link)
+      img(src= item.image, alt= item.name)
+      .header__cart-content
+        a(href= item.link)= item.name
+        p= item.price
+      .header__cart-trash
+        i.fa.fa-trash-o
+
+//- Footer Item
+mixin itemFooter(item)
+  li
+    a(href= item.link)= item.title

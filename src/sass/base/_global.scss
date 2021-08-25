@@ -1,0 +1,21 @@
+:root {
+  --color-primary: #{$color-primary};
+  --color-black: #{$color-black};
+  --color-dim-gray: #{$color-dim-gray};
+  --color-gray: #{$color-gray};
+  --color-white: #{$color-white};
+  --color-yellow: #{$color-yellow};
+  --color-blue: #{$color-blue};
+  --color-pink: #{$color-pink};
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-black);
+}
+
+a:hover {
+  color: var(--color-primary);
+}

@@ -1,0 +1,28 @@
+include ../base/mixins
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    //- Favicon
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+    block title
+      title Project 1 - OE39-FE-PR1-Nam
+    //- Icon
+    link(rel="stylesheet", href="./assets/css/icofont.min.css")
+    link(rel="stylesheet", href="./assets/css/flaticon.css")
+    link(rel="stylesheet", href="./assets/css/font-awesome.min.css")
+
+    //- Bootstrap CSS
+    link(rel="stylesheet", href="./assets/bootstrap/bootstrap.min.css")
+
+    //- My CSS
+    link(rel="stylesheet", href="./css/styles.css")
+  body
+    include ../partials/header.pug
+    block content
+    include ../partials/footer.pug
+    script(src='./assets/bootstrap/bootstrap.bundle.min.js')

@@ -1,0 +1,21 @@
+// transition
+@mixin transition-ease {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+// display-flex
+@mixin display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin align-items($property) {
+  -webkit-box-align: $property;
+  -webkit-align-items: $property;
+  -ms-flex-align: $property;
+  align-items: $property;
+}
